@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_dark"
+    android:orientation="vertical">
+
+    <!-- Top search bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/color_bg_dark"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="6dp"
+        android:paddingEnd="16dp">
+
+        <!-- Back Arrow Button -->
+        <ImageView
+            android:id="@+id/btnSearchBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/color_text_white" />
+
+        <!-- Search input box -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_dark"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/color_text_secondary" />
+
+            <EditText
+                android:id="@+id/etSearchInput"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Tìm kiếm người dùng hoặc video..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/color_text_white"
+                android:textColorHint="@color/color_text_secondary"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/btnClearSearch"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                android:src="@drawable/ic_close"
+                android:visibility="gone"
+                app:tint="@color/color_text_secondary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Tab filter (Tài khoản / Video) with indicator lines -->
+    <LinearLayout
+        android:id="@+id/layoutSearchTabs"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#14141C"
+        android:orientation="horizontal">
+
+        <!-- Tab Tài khoản -->
+        <LinearLayout
+            android:id="@+id/tabSearchUsers"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTabSearchUsersText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tài khoản"
+                android:textColor="@color/color_text_white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/indicatorSearchUsers"
+                android:layout_width="32dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/color_primary" />
+
+        </LinearLayout>
+
+        <!-- Tab Video -->
+        <LinearLayout
+            android:id="@+id/tabSearchVideos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTabSearchVideosText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Video"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/indicatorSearchVideos"
+                android:layout_width="32dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/color_primary"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Content area -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBarSearch"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvSearchEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Nhập từ khóa để bắt đầu tìm kiếm"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="14sp" />
+
+        <!-- User results list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearchUsers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+
+        <!-- Video results grid -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearchVideos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:padding="2dp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</LinearLayout>
+

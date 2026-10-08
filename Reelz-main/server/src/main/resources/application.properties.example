@@ -1,0 +1,31 @@
+# Mau cau hinh. Copy file nay thanh application.properties roi dien mat khau that.
+#
+#   copy application.properties.example application.properties
+#
+# File application.properties KHONG duoc commit len git (da co trong .gitignore)
+# vi chua mat khau CSDL.
+
+spring.application.name=donk-server
+server.port=8081
+
+spring.datasource.url=jdbc:mysql://localhost:3306/donk?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Ho_Chi_Minh&characterEncoding=utf8
+spring.datasource.username=root
+spring.datasource.password=MAT_KHAU_MYSQL_CUA_BAN
+
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.open-in-view=false
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+spring.servlet.multipart.max-file-size=200MB
+spring.servlet.multipart.max-request-size=210MB
+server.tomcat.max-swallow-size=-1
+
+app.upload.dir=D:/Donk/server/uploads
+
+app.jwt.secret=donk-dev-secret-key-change-me-in-production-0123456789
+app.jwt.expiration-days=7
+
+spring.jackson.serialization.write-dates-as-timestamps=false
+server.error.include-message=always
+server.error.include-stacktrace=never

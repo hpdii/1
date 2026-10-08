@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Brand — Reelz Signature Palette (TikTok Neon Coral & Electric Cyan) -->
+    <color name="color_primary">#FE2C55</color>
+    <color name="color_primary_dark">#D61F45</color>
+    <color name="color_primary_light">#2A1820</color>
+
+    <!-- Accents -->
+    <color name="color_accent">#25F4EE</color>
+    <color name="color_accent_red">#FE2C55</color>
+    <color name="color_favorite">#FE2C55</color>
+
+    <!-- Background (Deep Cinema OLED Black) -->
+    <color name="color_bg_light">#F5F5FA</color>
+    <color name="color_bg_dark">#0A0A0E</color>
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_surface_dark">#14141C</color>
+
+    <!-- Text (High contrast, easy to read) -->
+    <color name="color_text_primary">#FFFFFF</color>
+    <color name="color_text_secondary">#B2B2C4</color>
+    <color name="color_text_tertiary">#78788C</color>
+    <color name="color_text_white">#FFFFFF</color>
+
+    <!-- Legacy / alias -->
+    <color name="color_text_light">#FFFFFF</color>
+    <color name="color_text_dark">#0A0A0E</color>
+    <color name="color_text_gray">#B2B2C4</color>
+
+    <!-- Border / Input -->
+    <color name="color_border">#262634</color>
+    <color name="color_input_bg">#181822</color>
+
+    <!-- Action -->
+    <color name="color_danger">#FF3B5C</color>
+    <color name="color_danger_dark">#CC2040</color>
+    <color name="color_success">#00E676</color>
+
+    <!-- Overlay -->
+    <color name="color_black_overlay">#99000000</color>
+    <color name="color_black_overlay_light">#55000000</color>
+    <color name="color_black_overlay_dark">#E6000000</color>
+
+    <!-- Bottom Navigation -->
+    <color name="color_bottom_nav_dark">#EA0A0A0E</color>
+    <color name="color_bottom_nav_light">#F2FFFFFF</color>
+
+</resources>

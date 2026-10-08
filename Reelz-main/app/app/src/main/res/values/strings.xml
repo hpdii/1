@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Reelz</string>
+    <string name="login_title">Đăng nhập</string>
+    <string name="register_title">Đăng ký tài khoản</string>
+    <string name="username_hint">Tên đăng nhập hoặc email</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Mật khẩu (từ 6 ký tự)</string>
+    <string name="display_name_hint">Tên hiển thị</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="btn_register">Đăng ký</string>
+    <string name="no_account_prompt">Chưa có tài khoản? Đăng ký ngay</string>
+    <string name="has_account_prompt">Đã có tài khoản? Đăng nhập</string>
+    <string name="err_empty_field">Vui lòng điền đầy đủ thông tin</string>
+    <string name="err_network">Không thể kết nối tới server. Vui lòng kiểm tra Wi-Fi.</string>
+</resources>

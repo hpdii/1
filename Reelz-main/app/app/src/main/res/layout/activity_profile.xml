@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_dark"
+    android:orientation="vertical">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/color_bg_dark"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <ImageView
+            android:id="@+id/btnProfileBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/color_text_white" />
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Hồ sơ"
+            android:textColor="@color/color_text_white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/btnProfileSearch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_search"
+            app:tint="@color/color_text_white" />
+
+        <ImageView
+            android:id="@+id/btnLogout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_more_vert"
+            app:tint="@color/color_text_white" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Profile Info Header (TikTok / Reels style) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="16dp">
+
+                    <!-- Avatar -->
+                    <FrameLayout
+                        android:id="@+id/layoutProfileAvatar"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp">
+
+                        <ImageView
+                            android:id="@+id/ivProfileAvatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bg_button_primary" />
+
+                        <TextView
+                            android:id="@+id/tvAvatarChar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="U"
+                            android:textColor="@color/color_text_white"
+                            android:textSize="36sp"
+                            android:textStyle="bold" />
+
+                    </FrameLayout>
+
+                    <!-- Display name & username -->
+                    <TextView
+                        android:id="@+id/tvProfileDisplayName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Tên hiển thị"
+                        android:textColor="@color/color_text_white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProfileUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@username"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="14sp" />
+
+                    <!-- Follow & Like Stats Row (TikTok style) -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <!-- Following -->
+                        <LinearLayout
+                            android:id="@+id/layoutStatFollowing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp">
+
+                            <TextView
+                                android:id="@+id/tvStatFollowing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/color_text_white"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Đang follow"
+                                android:textColor="@color/color_text_tertiary"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="24dp"
+                            android:background="#22FFFFFF" />
+
+                        <!-- Followers -->
+                        <LinearLayout
+                            android:id="@+id/layoutStatFollowers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp">
+
+                            <TextView
+                                android:id="@+id/tvStatFollowers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/color_text_white"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Follower"
+                                android:textColor="@color/color_text_tertiary"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="24dp"
+                            android:background="#22FFFFFF" />
+
+                        <!-- Likes -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp">
+
+                            <TextView
+                                android:id="@+id/tvStatLikes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/color_text_white"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Thích"
+                                android:textColor="@color/color_text_tertiary"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Bio -->
+                    <TextView
+                        android:id="@+id/tvBio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:gravity="center"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="Chưa có tiểu sử"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="14sp" />
+
+                    <!-- Actions (Sửa hồ sơ OR Follow button) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <!-- For self: Sửa thông tin cá nhân -->
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnEditBio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_button_light"
+                            android:paddingStart="24dp"
+                            android:paddingEnd="24dp"
+                            android:text="Chỉnh sửa thông tin cá nhân"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <!-- For other users: Follow button -->
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnFollowAction"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_button_primary"
+                            android:paddingStart="28dp"
+                            android:paddingEnd="28dp"
+                            android:text="+ Theo dõi"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_text_white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Tabs (4 tabs for self, hidden/simplified for others) -->
+                <LinearLayout
+                    android:id="@+id/layoutTabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="#161622"
+                    android:orientation="horizontal">
+
+                    <!-- Tab 1: Đã đăng (Public) -->
+                    <LinearLayout
+                        android:id="@+id/tabUploaded"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTabUploadedLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Công khai"
+                            android:textColor="@color/color_text_white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:id="@+id/indicatorTabUploaded"
+                            android:layout_width="28dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/color_primary" />
+
+                    </LinearLayout>
+
+                    <!-- Tab 2: Bị ẩn (Chỉ mình tôi) -->
+                    <LinearLayout
+                        android:id="@+id/tabPrivate"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTabPrivateLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bị ẩn"
+                            android:textColor="@color/color_text_secondary"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:id="@+id/indicatorTabPrivate"
+                            android:layout_width="28dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/color_primary"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+
+                    <!-- Tab 3: Đã thích (Chỉ mình tôi) -->
+                    <LinearLayout
+                        android:id="@+id/tabLiked"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTabLikedLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Đã thích"
+                            android:textColor="@color/color_text_secondary"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:id="@+id/indicatorTabLiked"
+                            android:layout_width="28dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/color_primary"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+
+                    <!-- Tab 4: Đã lưu (Chỉ mình tôi) -->
+                    <LinearLayout
+                        android:id="@+id/tabBookmarked"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTabBookmarkedLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Đã lưu"
+                            android:textColor="@color/color_text_secondary"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:id="@+id/indicatorTabBookmarked"
+                            android:layout_width="28dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/color_primary"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Loading spinner -->
+                <ProgressBar
+                    android:id="@+id/progressBarProfile"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="32dp"
+                    android:visibility="gone" />
+
+                <!-- Empty State -->
+                <TextView
+                    android:id="@+id/tvEmptyMyVideos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="48dp"
+                    android:text="Chưa có video nào"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <!-- 3-Column Video Grid RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMyVideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:padding="1dp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+    <!-- Bottom Navigation Bar (only on own profile) -->
+    <LinearLayout
+        android:id="@+id/bottomNavProfile"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_bottom_nav_dark"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <!-- Tab Home -->
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trang chủ"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <!-- Tab Upload -->
+        <LinearLayout
+            android:id="@+id/navUpload"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_button_primary">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_add" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- Tab Profile -->
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_person" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tôi"
+                android:textColor="@color/color_text_white"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+

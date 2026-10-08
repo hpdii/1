@@ -1,0 +1,25 @@
+# --- Server (Maven / Spring Boot) ---
+server/target/
+server/uploads/*
+!server/uploads/.gitkeep
+server/*.log
+
+# --- Android (Gradle) ---
+app/.gradle/
+app/build/
+app/app/build/
+app/local.properties
+app/.idea/
+app/.vscode/
+*.iml
+app/captures/
+app/.externalNativeBuild/
+app/.cxx/
+
+# --- Claude & Temp ---
+.claude/
+*.log
+
+# --- Khac ---
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+<resources>
+    <style name="Base.Theme.Reelz" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorOnPrimary">@color/color_text_white</item>
+        <item name="colorSecondary">@color/color_accent</item>
+        <item name="colorOnSecondary">@color/color_text_primary</item>
+        <item name="android:statusBarColor">@color/color_bg_dark</item>
+        <item name="android:navigationBarColor">@color/color_bg_dark</item>
+        <item name="android:windowBackground">@color/color_bg_light</item>
+    </style>
+
+    <style name="Theme.Reelz" parent="Base.Theme.Reelz" />
+</resources>
